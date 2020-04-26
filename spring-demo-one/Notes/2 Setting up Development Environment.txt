@@ -1,0 +1,10 @@
+Setting up Development Environment
+
+	Lecture 12, 13 and 14
+		1. Install tomcat(Full) and Eclipse(JEE type)
+		
+	Lecture 15,16
+		1. Create tomcat server in eclipse
+		
+	Lecture 17	
+		1. Create java project and add all spring jar

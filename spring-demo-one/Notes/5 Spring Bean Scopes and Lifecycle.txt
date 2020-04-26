@@ -1,0 +1,50 @@
+Spring Bean Scopes and Lifecycle
+
+	Lecture 43 to 45
+		1. By default scope is singleton.
+		2. Spring creates only one instance of the bean, by default
+		3. It is cached in memory
+		4. All return a SHARED refrence to the same bean.
+		5. It is also called stateless bean.
+	
+		Additional Spring Bean Scopes
+			a.Singleton  (Create a single shared instance of the bean. Default scope)
+			b.prototype (Create a new bean request for each container request)
+			c.request (Scoped to an HTTP web request. Only used for web apps.)
+			d.session (Scoped to an HTTP web session.Only used for web apps.)
+			e.global-session (Scoped to an global HTTP web session.Only used for web apps.)
+	
+	Lecture 46 to 48
+		Bean Lifecycle
+		
+		Container Started---> Bean Instantiated ---> Dependencies Injected ---> Internal Spring Processing ---> Your Custom Init Method ---> Bean is Ready For Use ---> Container Shutdown ---> Custom Destroy method ---> Stop
+		
+		1. During bean intialization or destruction we can perform custom business logic spring allow us to do that and this is called Hooks.
+		2.In bean configuration you can call method by this way.
+			inti-methodd="doMystartupStuff"
+			destroy-method="doMycleanUpStuff"
+		3. The above both method can have any access modifier(public, protected, private)
+		4. Return type can be anything but if you returning any things it won't be able to capture.
+		5.Method can have any name.
+		6.The method can't accept any argument.
+		
+		Lecture 49 to 50
+		Notes:
+		If scope is prototype the spring will not call the destroy-method.
+		
+		Reason :
+		
+		In contrast to the other scopes, Spring does not manage the complete lifecycle of a prototype bean: the container instantiates, configures, and otherwise assembles a prototype object, and hands it to the client, with no further record of that prototype instance. Thus, although initialization lifecycle callback methods are called on all objects regardless of scope, in the case of prototypes, configured destruction lifecycle callbacks are not called.
+		
+		It is the responsibility of the client code to clean up prototype scoped objects and release any expensive resources that the prototype bean(s) are holding onto. (One possible way to get the Spring container to release resources used by prototype-scoped beans is through the use of a custom bean post-processor which would hold a reference to the beans that need to be cleaned up.)
+
+		One of the disadvantage of above approach is that you have to bnd you Employee class with Spring. This can be done by tellig spring.xml (init-method destroy-method attributes) which methds to run for inIt and destroy.
+
+		And that's quite logical: your application could ask for new instances of prototype beans every 10 milliseconds, do something with the bean, and then let it go out of scope. If Spring had to destroy() them when the application shuts down, it would have to keep a reference to every created prototype bean, preventing them to be garbage-collected, and thus causing a memory leak.
+		
+		This also applies to both XML configuration and Annotation-based configuration.
+		
+		1.You can destroy prototype beans but custom coding is required.
+		2. By implementing the BeanPostProcessor you can do that  that particular class code will run after each bean will get initialize or destroyed.
+		
+		Goto MycustomBeanPostProcessor class to check more details.

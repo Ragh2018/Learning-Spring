@@ -1,0 +1,37 @@
+Spring Dependency Injection - XML Configuration
+
+	Lecture 28
+		Dependency Injection
+		1.The client delegates to call to another object the responsiblity of providing its dependencies.
+		2. Dependency is same thing as helper objects.
+		
+		EXAMPLE:  You want to buy car but there are lots of things on which whole car is dependent like engine and others parts. Same like main object can be dependent to helper object which also neends to created at the time of object creation of main class. 
+		It also called as loose coupling from one object ypu are able to set the other object and its properties.
+		
+		Injection Type
+		1.Constructor Injection
+		2.Setter Injection
+		3. Auto-wiring (COvered later)
+		
+	Lecture 29 to 33
+		Constructor Injection
+		1.Define the bean in config file for the class which are dependent and to be injected in other class.
+		2.Add constructor arg in the bean of the class in which the dependent bean class is going to be injected.
+		3.Define the constructor in the class and pass the dependent class as argument.
+		4.At the time of bean creation spring at the back end inject your dependent class to the class which it is dependent.
+		5. Even in this any field can be defined by providing the value in constructor
+		6. You can pass multiple value in constructor injection(https://www.tutorialspoint.com/spring/constructor_based_dependency_injection.htm)
+	
+	Lecture 34 to 39
+		Setter Injection
+		1. In setter injection we define the setter method of the object that we wanted to set or for any other fields also we can define.
+		2.At the time of bean creation you have to define the property for bean configuration and provide name in the property from that spring will call internally the setter method of that objcet at the time of object creation of main class.
+		
+	Notes:-Whenever you load applicationContext it will create all the bean object.
+	
+	Bean object created-> Moved to container -> lifcycle -> Destroyed
+	
+	Lecture 40 to 42
+		1. Reading the values from properties file that will remove hardcoded depencies.
+		2. Add placehoder property and give the location of prop file in placeholer.
+		3. Fetch value in bean like this "${ragh.team}"

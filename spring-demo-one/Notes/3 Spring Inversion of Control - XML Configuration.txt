@@ -1,0 +1,39 @@
+Spring Inversion of Control - XML Configuration
+
+	Lecture 18 to 21 (IOC)
+		1. Design process , management of object . Outsource to an object factory.
+		2.Created application Based on the different coach give dailyworkout details for different different game. But here it is not configured in such a way that by only giving the object it provide the dailyworkout details so spring ioc  and Di comes into the picture.
+	
+	Lecture 21	to 27
+		1. Spring Container
+			a. Create and manage objects(Inversion of control)
+			b. Inject objects dependencies(Dependency Injection). 
+		2. Configuring Spring Container
+			a. XML configuration file(legacy)
+			b. Java Annotations
+			c. java Source code
+		3. SPring development Process
+			a.Configuring spring beans
+			b.Create Spring Container
+			c. Retrieve Beans from Spring Container
+		4. applicationContext.xml in which we are setting the beans
+		5. Creating a SPring Container
+			a.SPring container is generically known as ApplicationContext
+			b.Specialized implementations(to read the applicationContext.xml where you setted the bean)
+				1.ClassPathXMLApplicationContext
+				2.AnnotationsConfigApplicationContext
+				3.GenericWebApplicationContext
+				4.Otheres
+		Example for IOC
+		
+			Suppose we have to make an app which have different different coach of different different game. And all have some common properties like getDailyWorkout or getFortune. And client wants to just pass the object and app give the details based on the object. So here spring bean configuration comes into picture just by giving the Class name it will create the object and injects its dependencies and give you all the details. 
+			
+			So for this two above method to be present in every class we defined interface which have this two method and this will be implemeted in all the class. And there will be main method where we will be loading the applicationContext and getting the beans for the given object and then giving the details based on the bean object.
+			
+		FAQ: What is a Spring Bean?
+
+		A "Spring Bean" is simply a Java object.
+
+		When Java objects are created by the Spring Container, then Spring refers to them as "Spring Beans".
+
+		Spring Beans are created from normal Java classes .... just like Java objects.

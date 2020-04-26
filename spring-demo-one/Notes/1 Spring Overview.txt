@@ -1,0 +1,40 @@
+Spring Overview
+
+	Lecture 6 and 7
+		Why Spring?
+		1.Previously when spring wasn't there they are using EJB and J2EE which decrease the performance and create mess. For registering the beans it only take more time.
+		
+	Lecture 8
+		Spring 5 Requirement and Enhancement
+		1.Minimum java version 8
+		2.Upgraded spring MVC to use new versions of servlet API 4.0
+		3.Added new reative programming framework: SPring webFlux
+		
+	Lecture 9 and 10
+		Goal of spring.
+		1.lightweight development with java POJO(Plain old java objects)
+		2.Dependency injection to promote loose coupling
+		3.Declarative programming with Aspect-Oriented-Programming(AOP)
+		4.Minimize boilerplate java code.
+		
+		Core Container(Main items)
+		1. Beans (Bean factory to create the beans also it holds the beans in memory)
+		2.Aspect(Add functionality like logging,security,transactions by annotations or adding in config file);
+		3.Data Access Layer
+			a.JDBC
+			b.ORM(Object Relational Mapping)
+			c.JMS
+			d.Transaction manager
+			etc.
+		4.Web layer
+			a.Servlet
+			b.WebSocket
+			c.Web
+		5. Infrastructure
+			a.Remotely monitor (JMX)
+			b.AOP
+			c.Aspect
+		6. Test Layer (TDD)
+			a.Unit
+			b.Integration
+			c.Mock object and out of container testing
