@@ -7,22 +7,35 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- loading properties file -->
 	<context:property-placeholder
 		location="classpath:sport.properties" />
+
+
 	<!-- Define your beans here -->
 	<bean id="myFortune"
 		class="com.ragh.springdemo.fortune.HappyFortuneService"></bean>
-	
-	<!-- constructor injection-->
-	<bean id="baseballCoach" class="com.ragh.springdemo.coach.BaseballCoach">
-		<!-- set up constructor injection -->
-		<constructor-arg index="0" ref="myFortune" />
-		<constructor-arg index="1" value="${ragh.email}" />
-		<constructor-arg index="2"
-			value="${ragh.baseballCoach.team}" />
+
+	<!-- this is used for bean destroying if scope is prototype then we have 
+		to manually destroy the bean by writing custom code BeanpostProcessor . And 
+		this code will run every time whenever bean get initialize -->
+	<bean id="customProcessor"
+		class="com.ragh.springdemo.MyCustomBeanProcessor">
 	</bean>
-	<bean id="trackCoach" class="com.ragh.springdemo.coach.TrackCoach">
+
+	<bean id="myCricketCoach"
+		class="com.ragh.springdemo.coach.CricketCoach" scope="singleton"
+		init-method="doMyStartupStuff" destroy-method="doMyCleanUpStuff">
+		<!-- set up setter injection -->
+		<!-- here spring will call getFortuneService and set the bean (make first 
+			letter capital of name and add get) -->
+		<property name="fortuneService" ref="myFortune"></property>
+		<property name="emailAddress" value="${ragh.email}"></property>
+		<property name="team" value="${ragh.myCricketCoach.team}"></property>
+	</bean>
+
+	<bean id="trackCoach" class="com.ragh.springdemo.coach.TrackCoach"
+		scope="prototype" init-method="doMyStartupStuff"
+		destroy-method="destroy">
 		<!-- set up constructor injection -->
 		<constructor-arg index="0" ref="myFortune" />
 		<constructor-arg index="1" value="${ragh.email}" />
@@ -30,16 +43,7 @@
 			value="${ragh.trackCoach.team}" />
 	</bean>
 
-	<!-- Setter injection -->
-	<bean id="myCricketCoach" class="com.ragh.springdemo.coach.CricketCoach">
-		<!-- set up setter injection -->
-		<!-- here spring will call getFortuneService and set the bean (make first 
-			letter capital of name and add get) -->
-		<property name="fortuneService" ref="myFortune"></property>
-		<!-- fetching the values from properties file -->
-		<property name="emailAddress" value="${ragh.email}"></property>
-		<property name="team" value="${ragh.myCricketCoach.team}"></property>
-	</bean>
+
 </beans>
 
 

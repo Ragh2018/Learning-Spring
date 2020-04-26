@@ -1,5 +1,5 @@
-/com/
 /applicationContext.xml
-/applicationContext.out.xml
-/applicationContext.out.out.xml
+/com/
 /sport.properties
+/beanScope-applicationContext.xml
+/beanLifeCycle-applicationContext.xml

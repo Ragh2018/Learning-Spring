@@ -1,8 +1,10 @@
 package com.ragh.springdemo.coach;
 
+import org.springframework.beans.factory.DisposableBean;
+
 import com.ragh.springdemo.fortune.FortuneService;
 
-public class TrackCoach implements Coach {
+public class TrackCoach implements Coach, DisposableBean {
 
 	private FortuneService fortuneService;
 
@@ -35,4 +37,23 @@ public class TrackCoach implements Coach {
 		return "TrackCoach : " + fortuneService.getFortune();
 	}
 
+	// adding init method
+
+	public void doMyStartupStuff() {
+		System.out.println("Inside TrackCoach init method Yo Yo");
+	}
+
+	// adding destroy method but this method will not get called because scope for
+	// this class in beanLifeCycle-applicationContext.xml is defined as prototype
+	public void doMyCleanUpStuff() {
+		System.out.println("Inside TrackCoach destroy method Yala Yolo");
+	}
+
+	// destroy method overrided because we implemented DisposableBean and this will
+	// destroy the bean object
+	@Override
+	public void destroy() throws Exception {
+
+		System.out.println("Inside TrackCoach destroy method Yala Yolo");
+	}
 }
