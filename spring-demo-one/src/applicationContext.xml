@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder
+		location="classpath:sport.properties" />
+	<!-- Define your beans here -->
+	<bean id="myFortune"
+		class="com.ragh.springdemo.fortune.HappyFortuneService"></bean>
+
+	<bean id="baseballCoach" class="com.ragh.springdemo.coach.BaseballCoach">
+		<!-- set up constructor injection -->
+		<constructor-arg index="0" ref="myFortune" />
+		<constructor-arg index="1" value="${ragh.email}" />
+		<constructor-arg index="2"
+			value="${ragh.baseballCoach.team}" />
+	</bean>
+	<bean id="trackCoach" class="com.ragh.springdemo.coach.TrackCoach">
+		<!-- set up constructor injection -->
+		<constructor-arg index="0" ref="myFortune" />
+		<constructor-arg index="1" value="${ragh.email}" />
+		<constructor-arg index="2"
+			value="${ragh.trackCoach.team}" />
+	</bean>
+
+	<bean id="myCricketCoach" class="com.ragh.springdemo.coach.CricketCoach">
+		<!-- set up setter injection -->
+		<!-- here spring will call getFortuneService and set the bean (make first 
+			letter capital of name and add get) -->
+		<property name="fortuneService" ref="myFortune"></property>
+		<property name="emailAddress" value="${ragh.email}"></property>
+		<property name="team" value="${ragh.myCricketCoach.team}"></property>
+	</bean>
+</beans>
+
+
+
+
+
