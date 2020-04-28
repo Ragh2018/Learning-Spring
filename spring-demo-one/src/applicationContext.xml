@@ -33,7 +33,7 @@
 	<!-- Setter injection -->
 	<bean id="myCricketCoach" class="com.ragh.springdemo.coach.CricketCoach">
 		<!-- set up setter injection -->
-		<!-- here spring will call getFortuneService and set the bean (make first 
+		<!-- here spring will call setFortuneService and set the bean (make first 
 			letter capital of name and add get) -->
 		<property name="fortuneService" ref="myFortune"></property>
 		<!-- fetching the values from properties file -->
