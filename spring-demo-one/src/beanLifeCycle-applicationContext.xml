@@ -19,7 +19,7 @@
 		to manually destroy the bean by writing custom code BeanpostProcessor . And 
 		this code will run every time whenever bean get initialize -->
 	<bean id="customProcessor"
-		class="com.ragh.springdemo.MyCustomBeanProcessor">
+		class="com.ragh.springdemo.beanprocessor.MyCustomBeanProcessor">
 	</bean>
 
 	<bean id="myCricketCoach"

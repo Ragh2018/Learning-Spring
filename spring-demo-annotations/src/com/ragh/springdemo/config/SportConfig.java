@@ -1,4 +1,4 @@
-package com.ragh.springdemo;
+package com.ragh.springdemo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
