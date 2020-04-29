@@ -1,19 +1,26 @@
-package com.ragh.springdemo;
+package com.ragh.springdemo.coach;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import com.ragh.springdemo.fortune.FortuneService;
+
 @Component
-public class TennisCoach implements Coach {
+@Scope("prototype")
+public class TennisCoach implements Coach,DisposableBean {
 
 	//Field Injection
 	@Autowired
 	@Qualifier("happyFortuneService")
-	private ForturneService forturneService;
+	private FortuneService fortuneService;
 
-	
 	// As of Spring Framework 4.3, an @Autowired annotation on such a constructor is
 	// no longer necessary if the target bean only defines one constructor to begin
 	// with. However, if several constructors are available, at least one must be
@@ -21,14 +28,28 @@ public class TennisCoach implements Coach {
 	
 	//Constructor Injection
 	/*
-	 * @Autowired public TennisCoach(ForturneService forturneService) {
-	 * this.forturneService = forturneService; }
+	 * @Autowired public TennisCoach(FortuneService fortuneService) {
+	 * this.forturneService = fortuneService; }
 	 */
 	//Setter Injection
 	/*
-	 * @Autowired public void setForturneService(ForturneService forturneService) {
-	 * this.forturneService=forturneService; }
+	 * @Autowired public void setForturneService(FortuneService fortuneService) {
+	 * this.forturneService=fortuneService; }
 	 */
+	
+	//init method
+	@PostConstruct
+	public void init()
+	{
+		System.out.println("Inside init");
+	}
+	//destroy method
+	@Override
+	@PreDestroy
+	public void destroy()
+	{
+		System.out.println("Inside destroy");
+	}
 	@Value("${ragh.email}")
 	private String emailAddress;
 	@Value("${ragh.myTennisCoach.team}")
@@ -47,7 +68,7 @@ public class TennisCoach implements Coach {
 
 	@Override
 	public String getFortune() {
-		return forturneService.getFortune();
+		return fortuneService.getFortune();
 	}
 
 }

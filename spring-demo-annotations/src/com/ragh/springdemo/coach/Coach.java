@@ -1,4 +1,4 @@
-package com.ragh.springdemo;
+package com.ragh.springdemo.coach;
 
 public interface Coach {
 	

@@ -4,18 +4,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.ragh.springdemo.coach.Coach;
 
-public class AnnotationDemoApp {
+public class AnnotationBeanScopeDemoApp {
 
 	public static void main(String[] args) {
-
 		ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
-		//Here you can provide the beanid by default it is className
+		
 		Coach theCoach=context.getBean(Coach.class);
-		System.out.println(theCoach.getDailyRoutine());
-		System.out.println(theCoach.getFortune());
-		System.out.println(theCoach.getEmailAddress());
-		System.out.println(theCoach.getTeam());
-		context.close();
+		
+		Coach alphaCoach=context.getBean(Coach.class);
+		
+		System.out.print(theCoach==alphaCoach);
 	}
 
 }
