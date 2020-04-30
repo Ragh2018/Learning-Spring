@@ -1,0 +1,27 @@
+Spring Configuration with Java Annotations - Dependency Injection
+	
+	Lecture 58 to 62
+		What is Spring AutoWiring?
+			1. For Dependency injection, Spring can use auto wiring
+			2. Spring will look for a class that matches the property
+				a. Matches by type: class or interface
+			3. Spring will inject it automatically hence it is autowired
+		AutoWiring injection type
+			1.COnstructor Injection
+			2.Setter Injection
+			3.Field Injection
+		Constructor Injection Development
+			1.Define the dependency interface and class
+			2.Create a Constructor in your class for injection
+			3.Configure the dependency injection with @Autowired Annotations
+			
+		As of Spring Framework 4.3, an @Autowired annotation on such a constructor is no longer necessary if the target bean only defines one constructor to begin with. However, if several constructors are available, at least one must be annotated to teach the container which one to use.
+
+	Lecture 63
+		Setter Injection by AutoWiring
+		1. You can use any name for function just put @Autowired annotation it will inject the dependency
+		2. If you put @Autowired on any class variable spring will directly inject the dependency without any setter or getter injection by using reflection property.
+	Lecture 69 to 75
+		Qualifier
+		1. If multiple classes implementing the same interface then at the time of autowiring you have to tell to spring which one to inject by qualifying them with @Qualifier annotation we can give with default bean id.
+		2. If first 2 character of class name is capital then beanid will be same as class name it wouldn't converted with small case.

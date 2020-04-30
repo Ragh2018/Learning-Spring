@@ -1,0 +1,20 @@
+Spring Configuration with Java Annotations - Inversion of Control
+
+	Lecture 51
+		Java Annotations
+		1. Special labels/markers added to java classes.
+		2. Provide meta-data about the class.
+		3. Processed at compile time or run-time for special processing.
+		
+		Why Spring Configuration with Annotations?
+		1. XML configuration can be verbose
+		2.Configure your spring bean with annotations.
+		3.Annotations minimize the xml configuration.
+		
+		Scanning for Component classes.
+		1. Spring will scan your java classes for special annotations.
+		2. Automatically register the beans in the spring container.
+		
+		@Component("beanId")
+		
+		By default if you didn't mention the beanId then it will take class Name as a default beanId with first letter lowercase.

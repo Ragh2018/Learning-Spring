@@ -1,0 +1,6 @@
+Spring Configuration with Java Annotations - Bean Scopes and LifeCycle Methods
+
+	Lecture 76 to 83
+		1.By Giving @Scope annotation at class level you can directly tell spring which scope you want to use.
+		2. And we have init and destroy annotation as well @PostConstruct and @PreDestroy is the method that we are using.  And it will have same constraint as in xml configuratuion that we discuss. 
+		3. And for destroying the prototype bean it will be same as previous you have to manually implement the bean post processor.

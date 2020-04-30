@@ -1,0 +1,20 @@
+Spring Configuration with Java Code (no xml)
+	
+	Lecture 84 to 95
+		1.In previous two method we use xml in the first method we define all the dependency in xml only and in the second part we use xml to scan the component. Now in this lecture we will learn how to configure with no xml.
+		
+		Development Process
+		1. Create a java class and annotated as @Configuration
+		2.Add component scnanning support @ComponentScan(optional).
+		3. Read Spring java configuratuion class.
+		4. Retrieve bean from Spring container.
+		5. @PropertySource(path) to read the property file.
+		
+		Defining Spring beans with java code.(without component scan)
+		1. Define method to expose bean
+		2. Inject bean dependency
+		3. Read Spring java configuratuion class
+		4. Retrieve bean from spring container
+		
+		Development process
+		1. By @Bean annotation you can define each bean manually and method name will be your beanId. Go to code to understand more. And dependency also we can define same as above.By this no need of @ComponentScan
