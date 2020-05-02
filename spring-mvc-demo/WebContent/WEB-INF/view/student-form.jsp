@@ -18,9 +18,9 @@
 			<br><br>
 			Country :
 			<form:select path="country">
-				<form:options items="${theCountryOptions}" />
-				<%--<form:options items="${student.countryOptions}" />
-				 <form:option value="Brazil" label="Brazil" />
+<!-- 3rd way -->	<form:options items="${theCountryOptions}" />
+<!-- 2nd way -->	<%-- <form:options items="${student.countryOptions}" /> --%>
+<!-- 1st way -->	<%-- <form:option value="Brazil" label="Brazil" />
 				<form:option value="Germany" label="Germany" />
 				<form:option value="France" label="France" />
 				<form:option value="India" label="India" /> --%>
