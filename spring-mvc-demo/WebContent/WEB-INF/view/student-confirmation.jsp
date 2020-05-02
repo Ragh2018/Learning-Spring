@@ -1,22 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>>Hello World - Output Form</title>
+<title>Student Confirmation</title>
 </head>
 <body>
-	Hello World of Spring!
+	The Student is Confirmed:${student.firstName} ${student.lastName}
 	<br>
-	<br> Student Name: ${param.studentName}
-
-	<br>
-	<br> The message :${message}
-
+	<!-- This will call getter method getCountry() -->
+	Country: ${student.country}
 	<form action="showForm">
 		<button>Back</button>
 	</form>
-
+	
 </body>
 </html>
