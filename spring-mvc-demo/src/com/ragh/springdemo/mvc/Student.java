@@ -2,22 +2,30 @@ package com.ragh.springdemo.mvc;
 
 import java.util.LinkedHashMap;
 
-
 public class Student {
 
 	private String firstName;
 	private String lastName;
 	private String country;
+	
+	private String favoriteLanguage;
 	/* 2nd way */
-	//private LinkedHashMap<String, String> countryOptions;
+	// private LinkedHashMap<String, String> countryOptions;
 
 	/*
 	 * public LinkedHashMap<String, String> getCountryOptions() { return
 	 * countryOptions; }
 	 */
 
-	public Student()
-	{
+	public String getFavoriteLanguage() {
+		return favoriteLanguage;
+	}
+
+	public void setFavoriteLanguage(String favoriteLanguage) {
+		this.favoriteLanguage = favoriteLanguage;
+	}
+
+	public Student() {
 		/* 2nd way */
 		/*
 		 * countryOptions=new LinkedHashMap<String, String>();
@@ -26,7 +34,7 @@ public class Student {
 		 * countryOptions.put("US","United state");
 		 */
 	}
-	
+
 	public String getCountry() {
 		return country;
 	}

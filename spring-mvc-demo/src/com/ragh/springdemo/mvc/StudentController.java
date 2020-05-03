@@ -20,7 +20,7 @@ public class StudentController {
 	public String showForm(Model model) {
 		Student theStudent = new Student();
 		model.addAttribute("student", theStudent);
-		/* 3rd way */ 
+/* 3rd way */ 
 		model.addAttribute("theCountryOptions", countryOptions); 
 		return "student-form";
 	}
