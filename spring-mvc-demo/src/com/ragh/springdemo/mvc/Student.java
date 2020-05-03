@@ -2,6 +2,8 @@ package com.ragh.springdemo.mvc;
 
 import java.util.LinkedHashMap;
 
+import javax.print.DocFlavor.STRING;
+
 public class Student {
 
 	private String firstName;
@@ -9,6 +11,8 @@ public class Student {
 	private String country;
 	
 	private String favoriteLanguage;
+	private String operatingSystems;
+	
 	/* 2nd way */
 	// private LinkedHashMap<String, String> countryOptions;
 
@@ -16,6 +20,14 @@ public class Student {
 	 * public LinkedHashMap<String, String> getCountryOptions() { return
 	 * countryOptions; }
 	 */
+
+	public String getOperatingSystems() {
+		return operatingSystems;
+	}
+
+	public void setOperatingSystems(String operatingSystems) {
+		this.operatingSystems = operatingSystems;
+	}
 
 	public String getFavoriteLanguage() {
 		return favoriteLanguage;
