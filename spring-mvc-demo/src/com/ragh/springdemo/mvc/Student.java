@@ -9,10 +9,10 @@ public class Student {
 	private String firstName;
 	private String lastName;
 	private String country;
-	
+
 	private String favoriteLanguage;
 	private String operatingSystems;
-	
+
 	/* 2nd way */
 	// private LinkedHashMap<String, String> countryOptions;
 

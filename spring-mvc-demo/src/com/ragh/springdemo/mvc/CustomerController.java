@@ -14,26 +14,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
-	
-	//it will remove the leading or trailing white space from all the request
+
+	// it will remove the leading or trailing white space from all the request
 	@InitBinder
-	public void initBinder(WebDataBinder webDataBinder)
-	{
-		StringTrimmerEditor stringTrimmerEditor=new StringTrimmerEditor(true);
+	public void initBinder(WebDataBinder webDataBinder) {
+		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
 		webDataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
 	}
-	
+
 	@RequestMapping("/showForm")
 	public String showForm(Model model) {
 		Customer theCustomer = new Customer();
 		model.addAttribute("customer", theCustomer);
 		return "customer-form";
 	}
-	
+
 	@RequestMapping("/processForm")
-	public String processForm(@Valid @ModelAttribute("customer")Customer customer,BindingResult bindingResult )
-	{
-		if(bindingResult.hasErrors())
+	public String processForm(@Valid @ModelAttribute("customer") Customer customer, BindingResult bindingResult) {
+		
+		System.out.println("BindingResult "+bindingResult);
+		
+		System.out.println("\n\n\n\n");
+		if (bindingResult.hasErrors())
 			return "customer-form";
 		return "customer-confirmation";
 	}
