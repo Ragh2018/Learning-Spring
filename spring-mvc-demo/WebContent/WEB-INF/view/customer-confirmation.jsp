@@ -15,6 +15,9 @@
 	<br>Postal Code : ${customer.postalcode}
 	<br>
 	<br>
+	Course Code : ${customer.courseCode}
+	<br>
+	<br>
 	<form action="showForm">
 		<button>Back</button>
 </body>
