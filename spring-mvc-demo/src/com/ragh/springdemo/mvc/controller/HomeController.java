@@ -1,4 +1,4 @@
-package com.ragh.springdemo.mvc;
+package com.ragh.springdemo.mvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,10 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
 	@RequestMapping("/")
-	public String showPage()
-	{
+	public String showPage() {
 		return "main-menu";
 	}
-	
-	
+
 }

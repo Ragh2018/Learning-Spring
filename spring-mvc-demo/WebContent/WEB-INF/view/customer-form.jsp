@@ -7,9 +7,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Customer Registration Form</title>
-	<style type="text/css">
-		.error{color: red}
-	</style>
+<style type="text/css">
+.error {
+	color: red
+}
+</style>
 </head>
 <body>
 	<i>Fill out the form. (*) means required field</i>
@@ -22,6 +24,20 @@
 		<br>
 			Last Name (*) : <form:input path="lastName" />
 		<form:errors path="lastName" cssClass="error"></form:errors>
+		<br>
+		<br>
+			FreePasses :<form:input path="freePasses" />
+		<form:errors path="freePasses" cssClass="error"></form:errors>
+		<br>
+		<br>
+			Postal Code :<form:input path="postalcode" />
+		<form:errors path="postalcode" cssClass="error"></form:errors>
+			
+		<br>
+		<br>
+		Course Code :<form:input path="courseCode" />
+		<form:errors path="courseCode" cssClass="error"></form:errors>
+			
 		<br>
 		<br>
 		<input type="submit" value="Submit" />

@@ -1,0 +1,32 @@
+Spring MVC - Building Spring Web Apps	
+	
+	Lecture 96
+		What is Spring MVC?
+		1. Framework for building web applications in java.
+		2. Based on Model-View-Controller design pattern.
+		3. Leverages features of the core spring framework(IOC,DI)
+		
+		Component of a Spring MVC
+		1. A set of web pages to layout UI components.
+		2. A collection of spring beans (Controllers, services, etc)
+		3. Spring Configuration(XML,Annotations or java).
+	Lecture 97 to 99
+		Spring MVC Front Controller
+		1.Front Controller known as DispatcherServlet
+			a.Part of Spring Framework.
+			b. Already developed by Spring Dev Team.
+		2. You will create.
+			a.Model objects. (To transmit the data)
+			b.View templates. (To show the data) (Thymeleaf,Groovy,velocity,Freemarker)
+			c.Controller classes. (To write business logic).
+	Lecture 100 to 103
+		Spring MVC Configuration Process
+			Add configuratuion to file: WEB-INF/web.xml
+				1.Configure Spring MVC DispatcherServlet
+				2. Set up URL mappings to Spring MVC DispatcherServlet.
+		Spring MVC Configuration Process Part 2
+			Add configuratuion to file :WEB-INF/spring-mvc-demo-servlet.xml
+			
+			3. Add support for Spring component Scanning
+			4. Add support for conversion,formatting and validation
+			5.Configure Spring MVC view Resolver.

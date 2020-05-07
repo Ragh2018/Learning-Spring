@@ -1,0 +1,9 @@
+Spring MVC Form Validation - Applying Built-In Validation rules
+	
+	Lecture 140 to 152
+		Java's standard Bean validation API
+		1.It defines a meta model and API for entity validation. So, this Bean validation API is available for server side applications and also client side applications using, like, JavaFX or Swing. This is all defined at this one website here beanvalidation.
+		2. We are going to use hibernate validation jar file. This is different projrct not related to ORM. Hibernate provide jars to validate your fields.
+		3. we are adding one new attribute @Valid on the object which needs to be validate and one field(BindingResult) which hold the validation data.
+		4.When performing Spring MVC validation, the location of the BindingResult parameter is very important. In the method signature, the BindingResult parameter must appear immediately after the model attribute. 
+		5. @InitBinder use to remove the leading or trailing white space .So basically, what I want to do is add Init Binder to convert or trim the input strings.

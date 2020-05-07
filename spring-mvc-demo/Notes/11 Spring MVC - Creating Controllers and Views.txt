@@ -1,0 +1,55 @@
+Spring MVC - Creating Controllers and Views
+	Lecture 104 to 109
+		Development Process
+		1.create the controller class,
+		2.then we'll define the controller method.
+		3.Next we'll add request mappings
+		4.to the controller method,
+		5.and then we'll return the view name,
+		6.and then finally we'll develop the view page.
+		
+		creating the controller class.
+		
+		Basically, you define a class, and then you annotate it with @Controller. Now, @Controller basically says that this is a Spring MVC controller, and also, one thing that's really cool is that @Controller inherits from @Component, so it's really just a specialized component that supports web MVC.
+
+		The nice thing about this is that,when Spring does its component scanning, then it'll also pick up @Controllers because they inherit or extend from @Component. So this is the basic process here of defining a controller class.
+		
+		Always clean the server before restarting may be if in it work directory same url pattern present then you will get concurrent exception and server will not start.
+		
+	Lecture 110	to 118
+		1.From this lecture we written the form code and mapped to paticular url to process the form data and show view data on browser after performing some operation. To get the form data we can pass HttpServletRequest as a parameter and for showing the data you can pass the Model and then sett the attribute with any name and you can add any no of attribute. For showing the attribute on ui you just have to access the attribute that's it. go to code to check more on this.
+		
+
+	Bonus: Deploying To Tomcat using WAR files
+		Bonus: Deploying your App to Tomcat as a Web Application Archive (WAR) file
+
+		When you deploy your Java web apps, you can make use of a Web Application Archive (WAR) file.
+
+		The Web Application Archive (WAR) file is a compressed version of your web application. It uses the zip file format but the file has the .war extension.
+
+		If you are using Eclipse, then the best way to visualize it is think of your "WebContent" directory being compressed as a zip file with the .war extension.
+
+		This includes all of your web pages, images, css etc. It also includes the WEB-INF directory which includes your classes in WEB-INF/classes and supporting JAR files in WEB-INF/lib.
+
+		The WAR file format is part of the Java EE / Servlet specification. As a result, all Java EE servers support this format (ie jboss, weblogic, websphere, glassfish and tomcat).
+
+		Below, I provide steps on how to create a WAR file in Eclipse. I also show how to deploy the WAR file on Tomcat.
+
+		---
+
+		1. In Eclipse, stop Tomcat
+
+		2. Right-click your project and select Export > WAR File
+
+		3. In the Destination field, enter: <any-directory>/mycoolapp.war
+
+		4. Outside of Eclipse, start Tomcat
+		- If you are using MS Windows, then you should find it on the Start menu
+
+		5. Make sure Tomcat is up and running by visiting: http://localhost:8080
+
+		6. Deploy your new WAR file by copying it to <tomcat-install-directory>\webapps
+
+		Give it about 10-15 seconds to make the deployment. You'll know the deployment is over because you'll see a new folder created in webapps ... with your WAR file name.
+
+		7. Visit your new app. If your war file was: mycoolapp.war then you can access it with:  http://localhost:8080/mycoolapp/
