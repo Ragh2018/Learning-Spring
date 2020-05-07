@@ -1,0 +1,6 @@
+Spring MVC - Form Tags and Data Binding
+	
+	Lecture 125 to 139
+	1. Well these Spring MVC form tags, they give you an extra support. They support data binding, so this allows you to automatically set data and retrieve data from Java objects and beans.
+	2. At the time of  Design of form if you give your input field and add path in it then at the time of form submission it will call the setter method for that object and bind the value with that. Go and check form jsp.
+	3. In all this video we implemented radio button , check boxes, dropdown list in 3 ways. Go and check the code.

@@ -1,0 +1,5 @@
+Spring MVC - Request Params and Request Mappings
+	
+	Lecture 119 to 124
+		1.Binding variable using @RequestParam Annotation. Behhind the scene spring will read the requested parameter and assign it to the variable.
+		2.You can also use @RequestMapping at paraent level and all other mapping url will start after that.

@@ -1,4 +1,4 @@
-package com.ragh.springdemo.mvc;
+package com.ragh.springdemo.mvc.controller;
 
 import javax.validation.Valid;
 
@@ -10,6 +10,8 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ragh.springdemo.mvc.Customer;
 
 @Controller
 @RequestMapping("/customer")
