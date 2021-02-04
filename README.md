@@ -11,4 +11,4 @@ It is of almost 42 hours (Lectures: 559) course. Which contains the below topics
   7. Thymeleaf
   8. JPA & Hibernate
  
- I have created all the project for learning purpose and I have created notes for all the topic. Every Notes contains one topic for which consist of 6 to 7 videos. 
+ I have created all the projects for learning purpose and I have created notes for all the topics. Every Notes contain one topic for which consists of 6 to 7 videos. 
